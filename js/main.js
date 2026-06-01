@@ -293,17 +293,15 @@ function initCharacterShowcase() {
       cards.forEach(c => c.classList.remove('active'));
       card.classList.add('active');
 
-      // Update main showcase preview
-      previewImg.style.opacity = '0';
-      previewImg.style.transform = 'scale(0.8) translateY(10px)';
+      // Update main showcase preview with pop-in animation
+      previewImg.classList.remove('animate-pop');
+      void previewImg.offsetWidth; // Trigger reflow
       
-      setTimeout(() => {
-        previewImg.src = data.image;
-        previewImg.alt = data.name;
-        previewImg.style.opacity = '1';
-        previewImg.style.transform = 'scale(1) translateY(0)';
-        previewGlow.style.background = data.glow;
-      }, 200);
+      previewImg.src = data.image;
+      previewImg.alt = data.name;
+      previewGlow.style.background = data.glow;
+      
+      previewImg.classList.add('animate-pop');
 
       // Update text values
       charName.innerText = data.name;
