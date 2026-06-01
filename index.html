@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>It's Me Pico - Color. Conquer. Win. | Mobile Game by TXnB</title>
+  <meta name="description" content="Battle for territory, color more tiles than your opponent, unlock characters, and explore magical floating arenas. Download It's Me Pico on Google Play today!">
+  <meta name="keywords" content="Its Me Pico, Pico game, TXnB, mobile game, hyper casual, territory control, grid color game, Clash Royale style website, Fall Guys style website">
+  <meta name="author" content="TXnB Studio">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://itsmepico.com/">
+  <meta property="og:title" content="It's Me Pico - Color. Conquer. Win.">
+  <meta property="og:description" content="Battle for territory, color tiles, and unlock cute characters in this fast-paced portrait hyper-casual game!">
+  <meta property="og:image" content="assets/images/hero_arena.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://itsmepico.com/">
+  <meta property="twitter:title" content="It's Me Pico - Color. Conquer. Win.">
+  <meta property="twitter:description" content="Battle for territory, color tiles, and unlock cute characters in this fast-paced portrait hyper-casual game!">
+  <meta property="twitter:image" content="assets/images/hero_arena.png">
+
+  <!-- Favicon & Stylesheet -->
+  <link rel="icon" type="image/png" href="assets/images/base_pico.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Floating Particles Canvas -->
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- Header Navigation -->
+  <header class="main-header" id="header-nav">
+    <div class="nav-container">
+      <a href="#hero" class="logo-link" id="nav-logo-link">
+        <div class="logo-icon" aria-hidden="true">P</div>
+        <span class="logo-text">IT'S ME PICO</span>
+      </a>
+
+      <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" id="main-navigation">
+        <ul>
+          <li><a href="#about" class="nav-link" id="nav-link-about">About</a></li>
+          <li><a href="#characters" class="nav-link" id="nav-link-characters">Characters</a></li>
+          <li><a href="#arenas" class="nav-link" id="nav-link-arenas">Arenas</a></li>
+          <li><a href="#progression" class="nav-link" id="nav-link-progression">Progression</a></li>
+          <li><a href="#screenshots" class="nav-link" id="nav-link-screenshots">Screenshots</a></li>
+          <li><a href="#roadmap" class="nav-link" id="nav-link-roadmap">Roadmap</a></li>
+          <li><a href="#contact" class="nav-link" id="nav-link-contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <span class="hero-badge">NEW RELEASE</span>
+        <h1 class="hero-title">It's Me Pico</h1>
+        <div class="hero-subtitle">Color. Conquer. Win.</div>
+        <p class="hero-desc">
+          Battle for territory, color more tiles than your opponent, unlock new characters, and explore magical floating arenas.
+        </p>
+        
+        <div class="hero-actions">
+          <a href="https://play.google.com" target="_blank" class="btn btn-primary" id="btn-hero-download">
+            <svg class="btn-download-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5,3L19,12L5,21V3Z" />
+            </svg>
+            Google Play Download
+          </a>
+          <a href="#about" class="btn btn-secondary" id="btn-hero-learn">Learn More</a>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <!-- Floating Arena Graphic Backdrop -->
+        <img class="hero-arena-bg" src="assets/images/hero_arena.png" alt="Magical Floating Arena Design">
+        
+        <!-- Live Simulated Phone Screen Interface -->
+        <div class="hero-canvas-frame" id="live-gameplay-preview" aria-label="Simulated mobile gameplay demonstration of tile coloring grid battle">
+          <div class="mini-gameplay-container">
+            <div class="mini-gameplay-header">
+              <div class="mini-timer" id="game-timer">1:00</div>
+              <div class="mini-score-bar">
+                <div class="mini-score-left" id="score-left-indicator"></div>
+                <div class="mini-score-right" id="score-right-indicator"></div>
+                <div class="mini-score-text" id="score-numeric-readout"><span>PICO: 50%</span><span>SHADOW: 50%</span></div>
+              </div>
+              <div class="mini-coins-hud" id="coins-display">🪙 <span>142</span></div>
+            </div>
+            <div class="mini-gameplay-grid" id="game-grid-parent">
+              <!-- Grid elements generated in main.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="section-container">
+      <div class="about-grid">
+        <div class="about-text-content">
+          <span class="section-subtitle">OVERVIEW</span>
+          <h2 class="section-title">Color The Most Tiles Before Time Runs Out!</h2>
+          <p>
+            It's Me Pico is a portrait-mode hyper-casual territory control game where players compete to paint more grid tiles than their opponent. Earn coins from your matches, unlock quirky cosmetic characters, discover mystical floating arenas, and conquer your way through Pico's colorful world.
+          </p>
+          <a href="https://play.google.com" target="_blank" class="btn btn-primary" id="btn-about-play">Download & Play Now</a>
+        </div>
+
+        <div class="about-features" id="features-cards-grid">
+          <div class="feature-badge" id="feature-battles">
+            <div class="feature-icon">⚡</div>
+            <h3>Fast Territory Battles</h3>
+            <p>Engage in fast-paced 60-second matches. Action-packed and quick to complete.</p>
+          </div>
+          <div class="feature-badge" id="feature-characters">
+            <div class="feature-icon">👑</div>
+            <h3>Unlockable Characters</h3>
+            <p>Collect adorable Picos including Base Pico, Angel Pico, and Shadow Pico.</p>
+          </div>
+          <div class="feature-badge" id="feature-arenas">
+            <div class="feature-icon">🏝️</div>
+            <h3>Arena Progression</h3>
+            <p>Advance through floating islands, lava worlds, and snow-filled terrains.</p>
+          </div>
+          <div class="feature-badge" id="feature-offline">
+            <div class="feature-icon">✈️</div>
+            <h3>Offline Friendly</h3>
+            <p>Play anytime, anywhere. No network connection required for quick play matches.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Characters Section -->
+  <section class="characters-section" id="characters">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-subtitle">ROSTER</span>
+        <h2 class="section-title">Choose Your Pico</h2>
+      </div>
+
+      <div class="char-showcase-container">
+        <!-- Main Interactive Details Card -->
+        <div class="glass-panel char-details-panel" id="main-character-details">
+          <span class="char-type-badge" id="char-status-badge" style="color: var(--pico-blue)">Unlocked</span>
+          <h3 id="char-name-heading">Base Pico</h3>
+          <p id="char-description-para">
+            The hero of Pico's world! A energetic little yellow blob sporting his signature red cap. He is quick on his feet and ready to color the world.
+          </p>
+          
+          <table class="char-stats-table" style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+            <tr style="border-bottom: 1px solid var(--border-glass);">
+              <td style="padding: 10px 0; color: #a4b0be;">Body Color</td>
+              <td class="stat-val-body" style="padding: 10px 0; text-align: right; font-weight: 800; color: var(--pico-yellow);">Yellow</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-glass);">
+              <td style="padding: 10px 0; color: #a4b0be;">Accessory</td>
+              <td class="stat-val-accessory" style="padding: 10px 0; text-align: right; font-weight: 800;">Red Cap</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Big 3D Model Render Frame -->
+        <div class="char-main-preview" id="character-visual-frame">
+          <div class="char-preview-bg-glow" id="character-glow-effect"></div>
+          <img class="char-preview-img" id="character-main-image" src="assets/images/base_pico.png" alt="Base Pico Character">
+        </div>
+      </div>
+
+      <div style="margin-top: 3.5rem;">
+        <h3 style="text-align: center; margin-bottom: 1.5rem; font-size: 1.1rem; color: #a4b0be; letter-spacing: 1px;">Click a Character to Select</h3>
+        <!-- Thumbnails list -->
+        <div class="char-grid-selection" id="character-select-grid">
+          <div class="char-thumbnail-card active" id="thumb-base-pico" data-char="base-pico">
+            <img src="assets/images/base_pico.png" alt="Base Pico Preview">
+            <h4>Base Pico</h4>
+          </div>
+          <div class="char-thumbnail-card" id="thumb-shadow-pico" data-char="shadow-pico">
+            <img src="assets/images/shadow_pico.png" alt="Shadow Pico Preview">
+            <h4>Shadow Pico</h4>
+          </div>
+          <div class="char-thumbnail-card" id="thumb-angel-pico" data-char="angel-pico">
+            <img src="assets/images/angel_pico.png" alt="Angel Pico Preview">
+            <h4>Angel Pico</h4>
+          </div>
+          <div class="char-thumbnail-card coming-soon" id="thumb-devil-pico" data-char="devil-pico">
+            <img src="assets/images/devil_pico.png" alt="Devil Pico Preview">
+            <h4>Devil Pico</h4>
+          </div>
+          <div class="char-thumbnail-card coming-soon" id="thumb-winter-pico" data-char="winter-pico">
+            <img src="assets/images/winter_pico.png" alt="Winter Pico Preview">
+            <h4>Winter Pico</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Arenas Section -->
+  <section class="arenas-section" id="arenas">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-subtitle">ENVIRONMENTS</span>
+        <h2 class="section-title">Magical Floating Arenas</h2>
+      </div>
+
+      <!-- Scroller listing environments -->
+      <div class="arenas-scroller" id="arena-cards-scroller">
+        <!-- Base Arena -->
+        <div class="arena-card" id="card-arena-base">
+          <span class="arena-num">ARENA 1</span>
+          <span class="arena-status-badge">DEFAULT</span>
+          <div class="arena-preview-visual">
+            <div class="arena-visual-block" style="background: var(--pico-yellow);"></div>
+          </div>
+          <h3 class="arena-name">Base Arena</h3>
+          <p class="arena-desc">The sunny green hills where Pico matches start. Balanced and classic grid sizing.</p>
+        </div>
+
+        <!-- Shadow Arena -->
+        <div class="arena-card" id="card-arena-shadow">
+          <span class="arena-num">ARENA 2</span>
+          <span class="arena-status-badge" style="background: var(--pico-purple); color: white;">UNLOCKABLE</span>
+          <div class="arena-preview-visual">
+            <div class="arena-visual-block" style="background: var(--pico-purple);"></div>
+          </div>
+          <h3 class="arena-name">Shadow Arena</h3>
+          <p class="arena-desc">A deep purple floating world filled with glowing gems and neon grid lines.</p>
+        </div>
+
+        <!-- Angel Arena -->
+        <div class="arena-card" id="card-arena-angel">
+          <span class="arena-num">ARENA 3</span>
+          <span class="arena-status-badge" style="background: #2ed573; color: white;">UNLOCKABLE</span>
+          <div class="arena-preview-visual">
+            <div class="arena-visual-block" style="background: #f1f2f6;"></div>
+          </div>
+          <h3 class="arena-name">Angel Arena</h3>
+          <p class="arena-desc">A peaceful floating layout in the clouds. Highly elevated heavenly islands.</p>
+        </div>
+
+        <!-- Devil Arena -->
+        <div class="arena-card" id="card-arena-devil">
+          <span class="arena-num">ARENA 4</span>
+          <span class="arena-status-badge coming-soon">COMING SOON</span>
+          <div class="arena-preview-visual">
+            <div class="arena-visual-block" style="background: var(--pico-red);"></div>
+          </div>
+          <h3 class="arena-name">Devil Arena</h3>
+          <p class="arena-desc">A dangerous volcanic underworld. Color tiles quickly before lava sweeps them away!</p>
+        </div>
+
+        <!-- Winter Arena -->
+        <div class="arena-card" id="card-arena-winter">
+          <span class="arena-num">ARENA 5</span>
+          <span class="arena-status-badge coming-soon">COMING SOON</span>
+          <div class="arena-preview-visual">
+            <div class="arena-visual-block" style="background: #0fbcf9;"></div>
+          </div>
+          <h3 class="arena-name">Winter Arena</h3>
+          <p class="arena-desc">A frozen wonderland of snow and ice paths where tiles are slippery and speeds are fast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progression Loop Section -->
+  <section class="progression-section" id="progression">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-subtitle">THE CYCLE</span>
+        <h2 class="section-title">Progression Loop</h2>
+      </div>
+
+      <div class="progression-loop" id="progression-steps-container">
+        <!-- Step 1 -->
+        <div class="progression-step" id="step-play">
+          <div class="progression-step-num">1</div>
+          <h3 class="progression-step-title">Play Match</h3>
+          <p class="progression-step-desc">Jump into rapid 60-second battles.</p>
+        </div>
+
+        <div class="progression-arrow" aria-hidden="true">➔</div>
+
+        <!-- Step 2 -->
+        <div class="progression-step" id="step-coins">
+          <div class="progression-step-num">2</div>
+          <h3 class="progression-step-title">Earn Coins</h3>
+          <p class="progression-step-desc">Perform combos and claim victory rewards.</p>
+        </div>
+
+        <div class="progression-arrow" aria-hidden="true">➔</div>
+
+        <!-- Step 3 -->
+        <div class="progression-step" id="step-tiles">
+          <div class="progression-step-num">3</div>
+          <h3 class="progression-step-title">Tile Progress</h3>
+          <p class="progression-step-desc">Accumulate tiles painted across matching runs.</p>
+        </div>
+
+        <div class="progression-arrow" aria-hidden="true">➔</div>
+
+        <!-- Step 4 -->
+        <div class="progression-step" id="step-unlock-char">
+          <div class="progression-step-num">4</div>
+          <h3 class="progression-step-title">Unlock Character</h3>
+          <p class="progression-step-desc">Buy cute character skins from the catalog.</p>
+        </div>
+
+        <div class="progression-arrow" aria-hidden="true">➔</div>
+
+        <!-- Step 5 -->
+        <div class="progression-step" id="step-unlock-arena">
+          <div class="progression-step-num">5</div>
+          <h3 class="progression-step-title">Unlock Arena</h3>
+          <p class="progression-step-desc">Unlock new colorful floating playgrounds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots Gallery -->
+  <section class="screenshots-section" id="screenshots">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-subtitle">GALLERY</span>
+        <h2 class="section-title">Gameplay Showcase</h2>
+      </div>
+
+      <div class="screenshots-carousel-wrapper">
+        <div class="screenshots-carousel" id="gameplay-screenshots-carousel">
+          <div class="screenshot-slide" id="slide-screenshot-1">
+            <img src="assets/images/gameplay_one.png" alt="Gameplay Tile Match Board Screen">
+          </div>
+          <div class="screenshot-slide" id="slide-screenshot-2">
+            <img src="assets/images/gameplay_two.png" alt="Character Unlock Victory Screen UI">
+          </div>
+          <div class="screenshot-slide" id="slide-screenshot-3">
+            <img src="assets/images/gameplay_one.png" alt="Gameplay Grid Mode Color Overlap Action">
+          </div>
+          <div class="screenshot-slide" id="slide-screenshot-4">
+            <img src="assets/images/gameplay_two.png" alt="Pico Store Card Unlock screen detail">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap Section -->
+  <section class="roadmap-section" id="roadmap">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-subtitle">FUTURE</span>
+        <h2 class="section-title">Pico Roadmap</h2>
+      </div>
+
+      <div class="roadmap-timeline" id="roadmap-timeline-parent">
+        <!-- Phase 1 -->
+        <div class="roadmap-item" id="roadmap-phase-1">
+          <div class="roadmap-card">
+            <span class="roadmap-phase">PHASE 1</span>
+            <h3>Initial Arenas</h3>
+            <ul>
+              <li>Shadow Arena Release</li>
+              <li>Angel Arena Release</li>
+              <li>Base character adjustments</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="roadmap-item" id="roadmap-phase-2">
+          <div class="roadmap-card">
+            <span class="roadmap-phase">PHASE 2</span>
+            <h3>Lava & Ice</h3>
+            <ul>
+              <li>Devil Arena Release</li>
+              <li>Winter Arena Release</li>
+              <li>Winter cosmetics pack</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="roadmap-item" id="roadmap-phase-3">
+          <div class="roadmap-card">
+            <span class="roadmap-phase">PHASE 3</span>
+            <h3>Expanded Play</h3>
+            <ul>
+              <li>More playable characters</li>
+              <li>Interactive mechanics & powerups</li>
+              <li>Expanded tile progression stats</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About TXnB Studio -->
+  <section class="txnb-section" id="txnb">
+    <div class="section-container">
+      <div class="glass-panel txnb-card" id="txnb-studio-card">
+        <span class="txnb-studio-badge">THE CREATOR</span>
+        <h2>About TXnB</h2>
+        <p style="margin-top: 15px;">
+          TXnB is an independent game development and creative studio focused on building games, content, and entertainment experiences. No publisher. No external funding. Built through pure passion, continuous experimentation, and self-learning.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-subtitle">GET IN TOUCH</span>
+        <h2 class="section-title">Connect With Pico</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info" id="contact-info-block">
+          <div class="contact-card-glass" id="contact-details-business">
+            <div class="contact-card-icon" aria-hidden="true">✉</div>
+            <div class="contact-card-info">
+              <h4>Business Inquiries</h4>
+              <p>collaborations@txnb.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-card-glass" id="contact-details-location">
+            <div class="contact-card-icon" aria-hidden="true">📍</div>
+            <div class="contact-card-info">
+              <h4>Studio Location</h4>
+              <p>Independent & Distributed</p>
+            </div>
+          </div>
+
+          <div class="social-links" id="social-links-bar">
+            <a href="https://twitter.com" target="_blank" class="social-btn" id="social-btn-twitter" aria-label="Twitter Page">𝕏</a>
+            <a href="https://instagram.com" target="_blank" class="social-btn" id="social-btn-instagram" aria-label="Instagram Profile">📸</a>
+            <a href="https://youtube.com" target="_blank" class="social-btn" id="social-btn-youtube" aria-label="YouTube Channel">🎥</a>
+          </div>
+        </div>
+
+        <div class="glass-panel" id="contact-form-panel">
+          <form class="contact-form" id="contact-email-form">
+            <div class="form-group-row">
+              <div class="form-input-wrapper">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" class="form-control" placeholder="Pico Runner" required>
+              </div>
+              <div class="form-input-wrapper">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" class="form-control" placeholder="runner@pico.com" required>
+              </div>
+            </div>
+            
+            <div class="form-input-wrapper">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" class="form-control" placeholder="Game Feedback / Inquiry" required>
+            </div>
+
+            <div class="form-input-wrapper">
+              <label for="message">Message</label>
+              <textarea id="message" class="form-control" placeholder="Hey TXnB! I colored 100 tiles!" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="btn-submit-contact" style="width: 100%; border-radius: 12px; margin-top: 10px;">Send Message</button>
+            <div class="form-status-msg" id="contact-form-status-box" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer" id="footer-navigation">
+    <div class="section-container">
+      <div class="footer-top">
+        <a href="#hero" class="logo-link" id="footer-logo-link">
+          <div class="logo-icon" aria-hidden="true">P</div>
+          <span class="logo-text">IT'S ME PICO</span>
+        </a>
+        <div class="footer-nav">
+          <a href="privacy.html" class="footer-nav-link" id="footer-link-privacy">Privacy Policy</a>
+          <a href="privacy.html#terms" class="footer-nav-link" id="footer-link-terms">Terms of Service</a>
+          <a href="#contact" class="footer-nav-link" id="footer-link-support">Contact Support</a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="copyright-text" id="footer-copyright-readout">© 2026 TXnB Studio. All Rights Reserved.</div>
+        <div class="footer-email" id="footer-contact-email">contact@txnb.com</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/particles.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
